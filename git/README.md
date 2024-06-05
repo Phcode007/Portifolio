@@ -3,3 +3,5 @@
 ## Salvando modificações no Git
 
 ## Aprendendo novos comandos
+
+- comando git push
