@@ -5,3 +5,4 @@
 ## Aprendendo novos comandos
 
 - comando git push
+- comando git pull
