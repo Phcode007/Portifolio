@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sobre mim</title>
-        <link rel="stylesheet" href="./estilos/style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mim - Paulo Henrique</title>
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/header.css">
+    <link rel="stylesheet" href="estilos/about.css">
+    <link rel="stylesheet" href="estilos/footer.css">
+</head>
+<body>
+<header class="cabecalho">
+    <nav class="cabecalho__nav" aria-label="Navegação principal">
+        <a href="index.html" class="cabecalho__link">Home</a>
+        <a href="aboutme.html" class="cabecalho__link cabecalho__link--ativo">Sobre mim</a>
+    </nav>
+</header>
 
-    <body>
-        <header class="cabecalho">
-            <a class="cabecalho_menu_link" href="index.html">Home</a>
-        </header>
-        
-        <main class="apresentacao">
-            <section class="apresentacao_conteudo">
-                <h1 class="apresentacao_conteudo_titulo">Sobre mim</h1>
-                <p class="apresentacao_p">👋 Olá, Eu sou Paulo Henrique Belarmino</p>
-                <p class="apresentacao_p">👀 Eu me interesso por literatura, programação, administração e finanças</p>
-                <p class="apresentacao_p">🌱 Atualmente estou aprendendo HTML, CSS e Javascript, também tenho conhecimento em Java Poo e Phyton</p>
-                <p class="apresentacao_p">📫 Caso queira me encontrar, entre em contato por este canal, ou pelo email paulobelarmino047@gmail.com</p>
-            </section>
-            <img class="apresentacao_imagem" src="./assets/Euport.jpg" alt="Logo marca de PH Codes">
-        </main>
+<main class="sobre">
+    <div class="container">
+        <div class="sobre__conteudo">
+            <div class="sobre__texto">
+                <h1 class="sobre__titulo">Sobre mim</h1>
 
-        <footer class="rodape">
-            <p>Desenvolvido por Paulo Henrique Belarmino Santos</p>
-        </footer>
-    </body>
+                <p class="sobre__paragrafo">
+                    <span role="img" aria-label="Cumprimento">👋</span> Olá, Eu sou Paulo Henrique Belarmino
+                </p>
+
+                <p class="sobre__paragrafo">
+                    <span role="img" aria-label="Interesses">👀</span> Eu interesso-me por literatura, programação, administração e finanças
+                </p>
+
+                <p class="sobre__paragrafo">
+                    <span role="img" aria-label="Estudos">🌱</span> Atualmente estou-me dedicando a projetos com HTML, CSS e Javascript.
+                    Também tenho conhecimento em Java POO e Python.
+                </p>
+
+                <p class="sobre__paragrafo">
+                    <span role="img" aria-label="Contato">📫</span> Caso queira encontrar-me, entre em contato por este canal,
+                    ou pelo email <a href="mailto:paulobelarmino047@gmail.com" class="texto-destaque">paulobelarmino047@gmail.com</a>
+                </p>
+            </div>
+
+            <div class="apresentacao__imagem-container">
+                <img src="assets/Euport.jpg" alt="Paulo Henrique" class="apresentacao__imagem">
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="rodape">
+    <p class="rodape__texto">Desenvolvido por Paulo Henrique Belarmino Santos</p>
+</footer>
+
+<script src="js/scripts.js"></script>
+</body>
 </html>
