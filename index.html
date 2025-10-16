@@ -1,143 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu Nome - Desenvolvedor Web</title>
-    <link rel="stylesheet" href="/Portifolio/estilos/style.css">
-</head>
-<body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Projeto Portfólio" />
+    <meta name="author" content="Paulo Henrique Belarmino" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <link rel="icon" type="image/svg" href="./assets/img/favicon.svg" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Meu Perfil</title>
+  </head>
+  <body>
     <header>
-        <nav class="container">
-            <a href="#home" class="logo">Seu Nome</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-            <button class="mobile-menu">☰</button>
-        </nav>
+      <h1>Olá me chamo Paulo Henrique Belarmino</h1>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
     </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Olá, eu sou Desenvolvedor</h1>
-            <p>Criando experiências digitais incríveis com código limpo e design moderno</p>
-            <a href="#projects" class="cta-button">Ver Meus Projetos</a>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">Sobre Mim</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Sou um desenvolvedor web apaixonado por criar soluções elegantes e funcionais. Com experiência em tecnologias modernas, busco sempre entregar projetos que combinam performance, acessibilidade e design excepcional.</p>
-                    <p>Quando não estou codificando, gosto de explorar novas tecnologias, contribuir para projetos open source e compartilhar conhecimento com a comunidade.</p>
-                </div>
-                <div class="skills">
-                    <div class="skill">HTML5</div>
-                    <div class="skill">CSS3</div>
-                    <div class="skill">JavaScript</div>
-                    <div class="skill">React</div>
-                    <div class="skill">Node.js</div>
-                    <div class="skill">Python</div>
-                    <div class="skill">Git</div>
-                    <div class="skill">MongoDB</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Meus Projetos</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image">E-commerce App</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Loja Virtual Moderna</h3>
-                        <p class="project-description">Uma aplicação completa de e-commerce com carrinho de compras, sistema de pagamento e painel administrativo.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Stripe</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Ver Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">Dashboard Analytics</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Dashboard de Métricas</h3>
-                        <p class="project-description">Dashboard interativo para visualização de dados com gráficos dinâmicos e relatórios em tempo real.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Chart.js</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Ver Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">Task Manager</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Gerenciador de Tarefas</h3>
-                        <p class="project-description">Aplicação de produtividade com drag-and-drop, colaboração em equipe e sincronização em tempo real.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Socket.io</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Ver Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Sua mensagem aqui..." required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Enviar Mensagem</button>
-            </form>
-        </div>
-    </section>
-
+    <main>
+      <section id="about">
+        <h2>Sobre mim:</h2>
+        <article>
+          <img
+            src="./assets/img/Foto de um futuro DEV Full Stack.jpeg"
+            alt=" Foto do Dev mais abençoado de todos"
+          />
+          <p>
+            👋 E aí! Eu sou o Paulo Henrique Belarmino Santos Sou desenvolvedor
+            Full Stack e curto transformar ideias em código. Gosto de ver as
+            coisas ganhando vida na tela — desde o front que brilha com React,
+            até o back que roda liso com Node.js e PostgreSQL. Tô sempre
+            aprendendo algo novo, quebrando a cabeça com bugs (e vencendo eles,
+            claro 😎) e buscando evoluir em cada projeto. Se é desafio, pode me
+            chamar que eu vou.
+          </p>
+        </article>
+      </section>
+      <section id="video">
+        <h2>Meu vídeo favorito:</h2>
+        <figure>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/TK0V7G0aIxU?si=Gm2OL1wsGCcLMlG5&amp;start=8"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </figure>
+      </section>
+    </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Paulo Henrique Belarmino. Todos os direitos reservados.</p>
-        </div>
+      <section>
+        <a href="">
+          <img src="./assets/img/linkedin.svg" alt="LinkedIn" />
+        </a>
+        <a href="">
+          <img src="./assets/img/github.svg" alt="GitHub" />
+        </a>
+        <a href="">
+          <img src="./assets/img/instagram.svg" alt="Instagram" />
+        </a>
+      </section>
+      <h3>Feito com 💻 por Paulo Henrique Belarmino - 2025</h3>
     </footer>
-
-    <script src="script.js"></script>
-</body>
+  </body>
 </html>
