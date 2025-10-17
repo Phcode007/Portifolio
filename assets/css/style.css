@@ -88,6 +88,7 @@ nav a:hover {
 /* About */
 #about article {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
@@ -99,6 +100,7 @@ nav a:hover {
 
 #about p {
   flex: 1;
+  width: 100%;
 }
 
 /* Vídeo */
@@ -212,4 +214,33 @@ form span {
 
 .article_mapa iframe {
   align-self: center;
+}
+
+/* Efeito de digitação */
+.first-presentation {
+  overflow: hidden;
+  border-right: 3px solid var(--blue-p);
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  display: inline-block;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--blue-p);
+  }
 }
