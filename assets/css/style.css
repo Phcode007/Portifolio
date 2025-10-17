@@ -7,16 +7,16 @@
 
 :root {
   --purple-200: #9a7bd1;
-  --purple-500: #6b36c8;
-  --purple-800: #441f88;
+  --blue-p: #05339c;
+  --green-t: #41a67e;
   --black-800: #171717;
   --gray-200: #cccccc;
   --white: #f9f9f9;
 }
 
 body {
-  background: var(--gray-200);
-  color: var(--black-800);
+  background: var(--black-800);
+  color: var(--white);
   font-family: sans-serif;
 }
 
@@ -59,7 +59,7 @@ section {
 
 /* Header e Menu */
 header {
-  background: var(--purple-800);
+  background: var(--black-800);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -93,7 +93,7 @@ nav a:hover {
 }
 
 #about img {
-  width: 200px;
+  width: 150px;
   flex-shrink: 0;
 }
 
@@ -114,7 +114,7 @@ footer {
   justify-content: center;
   padding: 1rem;
   color: var(--white);
-  background-color: var(--purple-500);
+  background-color: var(--black-800);
   font-weight: bold;
   text-align: center;
 }
