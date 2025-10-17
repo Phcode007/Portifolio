@@ -219,7 +219,7 @@ form span {
 /* Efeito de digitação */
 .first-presentation {
   overflow: hidden;
-  border-right: 3px solid var(--blue-p);
+  border-right: 3px solid var(--green-t);
   white-space: nowrap;
   margin: 0 auto;
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
@@ -241,6 +241,71 @@ form span {
     border-color: transparent;
   }
   50% {
-    border-color: var(--blue-p);
+    border-color: var(--green-t);
+  }
+}
+
+.color-span {
+  color: var(--green-t);
+  font-weight: 600;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  #about article {
+    gap: 1.5rem;
+  }
+
+  #about img {
+    width: 120px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .first-presentation {
+    font-size: 1.3rem !important;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  nav ul {
+    gap: 0.5rem;
+  }
+
+  #about img {
+    width: 100px;
+  }
+
+  .first-presentation {
+    font-size: 1.1rem !important;
+    white-space: normal; /* Permite quebra de linha em telas pequenas */
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+
+  footer img {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
