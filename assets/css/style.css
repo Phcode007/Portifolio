@@ -161,7 +161,7 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* Seção Stacks - CORRIGIDO */
+/* Seção Stacks - SEM HOVER */
 .stacks-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -178,28 +178,14 @@ nav a:hover {
   padding: 1.5rem 1rem;
   background: var(--white);
   border-radius: 0.75rem;
-  transition: all 0.3s ease;
-  cursor: pointer;
   border: 2px solid transparent;
-}
-
-.tech-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(65, 166, 126, 0.2);
-  border-color: var(--green-t);
 }
 
 .tech-item img {
   width: 3rem;
   height: 3rem;
   object-fit: contain;
-  transition: transform 0.3s ease;
-  filter: none !important; /* CORREÇÃO: Remove filtros indesejados */
-}
-
-.tech-item:hover img {
-  transform: scale(1.1);
-  filter: none !important; /* CORREÇÃO: Mantém cores originais no hover */
+  filter: none !important;
 }
 
 .tech-item span {
@@ -207,12 +193,6 @@ nav a:hover {
   font-weight: 600;
   font-size: 0.9rem;
   text-align: center;
-  transition: color 0.3s ease;
-}
-
-.tech-item:hover span {
-  color: var(--green-t);
-  font-weight: 700;
 }
 
 /* Seção de Projetos */
@@ -474,15 +454,6 @@ form span {
 
 .article_mapa iframe {
   align-self: center;
-}
-
-/* CORREÇÃO ADICIONAL - Garantir que ícones das stacks mantenham cores originais */
-.stacks-container img {
-  filter: none !important;
-}
-
-.tech-item img {
-  filter: none !important;
 }
 
 /* Tablets */
