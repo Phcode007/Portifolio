@@ -161,7 +161,6 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* Seção Stacks - SEM HOVER */
 /* Seção Stacks - COM HOVER, SEM BORDA */
 .stacks-container {
   display: grid;
@@ -181,13 +180,11 @@ nav a:hover {
   border-radius: 0.75rem;
   transition: all 0.3s ease;
   cursor: pointer;
-  border: 2px solid transparent; /* Mantém sem borda visível */
 }
 
 .tech-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(65, 166, 126, 0.2);
-  /* SEM border-color aqui! */
 }
 
 .tech-item img {
@@ -195,12 +192,10 @@ nav a:hover {
   height: 3rem;
   object-fit: contain;
   transition: transform 0.3s ease;
-  filter: none !important;
 }
 
 .tech-item:hover img {
   transform: scale(1.1);
-  filter: none !important;
 }
 
 .tech-item span {
@@ -357,12 +352,6 @@ nav a:hover {
 .project-links a:hover img {
   filter: invert(65%) sepia(79%) saturate(459%) hue-rotate(94deg)
     brightness(96%) contrast(87%);
-}
-
-/* Vídeo */
-#video figure {
-  display: flex;
-  justify-content: center;
 }
 
 /* Footer */
