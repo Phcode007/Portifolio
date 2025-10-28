@@ -161,7 +161,7 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* Seção Stacks */
+/* Seção Stacks - CORRIGIDO */
 .stacks-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -194,10 +194,12 @@ nav a:hover {
   height: 3rem;
   object-fit: contain;
   transition: transform 0.3s ease;
+  filter: none !important; /* CORREÇÃO: Remove filtros indesejados */
 }
 
 .tech-item:hover img {
   transform: scale(1.1);
+  filter: none !important; /* CORREÇÃO: Mantém cores originais no hover */
 }
 
 .tech-item span {
@@ -472,6 +474,15 @@ form span {
 
 .article_mapa iframe {
   align-self: center;
+}
+
+/* CORREÇÃO ADICIONAL - Garantir que ícones das stacks mantenham cores originais */
+.stacks-container img {
+  filter: none !important;
+}
+
+.tech-item img {
+  filter: none !important;
 }
 
 /* Tablets */
