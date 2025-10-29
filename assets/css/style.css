@@ -230,7 +230,7 @@ nav a:hover::after {
 .profile-card {
   position: relative;
   width: 350px;
-  height: 350px;
+  height: 450px;
   border-radius: 20px;
   overflow: hidden;
   border: 3px solid var(--primary);
