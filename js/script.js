@@ -1,47 +1,31 @@
-const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const header = document.getElementById("header");
 
-formulario.addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  const campoNome = document.querySelector("#name");
-  const errNome = document.querySelector("#errNome");
-
-  if (campoNome.value.length < 3) {
-    errNome.innerHTML = "O Nome deve ter no mínimo 3 caracteres.";
-    campoNome.focus();
-    return;
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    header.classList.add("scrolled");
   } else {
-    errNome.innerHTML = "";
+    header.classList.remove("scrolled");
   }
+});
 
-  const campoEmail = document.querySelector("#email");
-  const errEmail = document.querySelector("#errEmail");
+// Animação de fade-in nos elementos
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px",
+};
 
-  if (!campoEmail.value.match(emailRegex)) {
-    errEmail.innerHTML = "Digite um E-mail válido.";
-    campoEmail.focus();
-    return;
-  } else {
-    errEmail.innerHTML = "";
-  }
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, observerOptions);
 
-  const campoSubject = document.querySelector("#subject");
-  const errSubject = document.querySelector("#errSubject");
-
-  if (campoSubject.value.length < 5) {
-    errSubject.innerHTML = "O Assunto deve ter no mínimo 5 caracteres.";
-    campoSubject.focus();
-    return;
-  } else {
-    errSubject.innerHTML = "";
-  }
-
-  const campoMessage = document.querySelector("#message");
-
-  window.alert("Formulário Enviado com Sucesso!");
-
-  campoNome.value = "";
-  campoEmail.value = "";
-  campoSubject.value = "";
-  campoMessage.value = "";
+document.querySelectorAll("section").forEach((section) => {
+  section.style.opacity = "0";
+  section.style.transform = "translateY(30px)";
+  section.style.transition = "all 0.6s ease";
+  observer.observe(section);
 });

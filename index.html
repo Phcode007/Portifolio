@@ -8,331 +8,282 @@
       content="Portfólio de Paulo Henrique Belarmino - Desenvolvedor Full Stack"
     />
     <meta name="author" content="Paulo Henrique Belarmino" />
-    <meta
-      name="keywords"
-      content="HTML, CSS, JavaScript, React, TypeScript, Node.js, PostgreSQL"
-    />
-    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg" />
+    <title>Paulo Henrique Belarmino - Dev Full Stack</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <title>Paulo Henrique Belarmino - Desenvolvedor Full Stack</title>
   </head>
   <body>
-    <header>
-      <h1 class="present-text">My Portfolio</h1>
+    <!-- HEADER -->
+    <header id="header">
+      <a href="#" class="logo">PH.dev</a>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#stacks">Skills</a></li>
+          <li><a href="#projects">Projetos</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <section id="about">
-        <article>
-          <img
-            src="./assets/Foto de um futuro DEV Full Stack.jpeg"
-            alt="Foto do Dev Paulo Henrique Belarmino"
-          />
-
-          <h1 class="first-presentation">
-            👋 Olá! Sou Paulo Henrique Belarmino Santos.
-          </h1>
-
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="typing-effect">👋 Olá! Sou Paulo Henrique Belarmino</h1>
+          <p class="subtitle">Desenvolvedor Full Stack</p>
           <p>
-            Desenvolvedor Full Stack com foco em
-            <span class="color-span">Front-end</span>. Construo interfaces
+            Transformo ideias em aplicações web modernas e funcionais.
+            Especializado em criar experiências digitais que resolvem problemas
+            reais com código limpo e eficiente.
+          </p>
+          <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary"> Ver Projetos → </a>
+            <a
+              href="https://github.com/Phcode007"
+              target="_blank"
+              class="btn btn-secondary"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-card">
+            <img
+              src="./assets/Foto de um futuro DEV Full Stack.jpeg"
+              alt="Paulo Henrique"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="about">
+      <h2 class="section-title">Sobre Mim</h2>
+      <p class="section-description">
+        Desenvolvedor apaixonado por tecnologia e soluções inovadoras
+      </p>
+
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Sou um desenvolvedor Full Stack com foco em
+            <span class="highlight">Front-end</span>. Construo interfaces
             funcionais e responsivas que resolvem problemas reais, utilizando
             React, TypeScript e CSS moderno.
           </p>
-
           <p>
-            No <span class="color-span">Back-end</span>, trabalho com Node.js e
+            No <span class="highlight">Back-end</span>, trabalho com Node.js e
             PostgreSQL para garantir que a aplicação seja robusta e escalável.
             Tenho experiência em projetos completos desde a concepção da
-            arquitetura até a entrega final, sempre buscando soluções eficientes
-            e código limpo.
+            arquitetura até a entrega final.
           </p>
 
+          <h3>📚 Além do Código</h3>
           <p>
-            Encaro desafios técnicos com pragmatismo: analiso o problema, testo
-            soluções e entrego resultados. Se você precisa de alguém que
-            transforma requisitos em aplicações funcionais, vamos conversar.
-          </p>
-
-          <h3>📚 Além do código</h3>
-
-          <p class="second-p">
             Quando não estou programando, você me encontra imerso em boas
-            leituras — desde histórias fantásticas que expandem a imaginação até
-            livros sobre auto-performance e desenvolvimento pessoal. A Bíblia
-            também faz parte da minha rotina.
+            leituras — desde histórias fantásticas até livros sobre
+            desenvolvimento pessoal e a Bíblia.
           </p>
-
-          <p class="second-p">
+          <p>
             Nos momentos de pausa, jogo Mobile Legends como main Mid, onde
-            estratégia e timing fazem toda diferença, e também são habilidades
-            que uso no código. Também sou fã de animes, mangás e manhwas.
+            estratégia e timing fazem toda diferença — habilidades que também
+            uso no código. Também sou fã de animes, mangás e manhwas.
           </p>
+        </div>
+      </div>
+    </section>
 
-          <h3>🚀 Minhas Stacks</h3>
+    <!-- STACKS -->
+    <section id="stacks">
+      <h2 class="section-title">Minhas Skills</h2>
+      <p class="section-description">
+        Tecnologias que domino para criar soluções completas
+      </p>
 
-          <div class="stacks-container">
-            <div class="tech-item">
-              <img src="./assets/techs/html5.svg" alt="HTML5" />
-              <span>HTML5</span>
+      <div class="stacks-grid">
+        <div class="stack-item">
+          <img src="./assets/techs/html5.svg" alt="HTML5" />
+          <span>HTML5</span>
+        </div>
+        <div class="stack-item">
+          <img src="./assets/techs/css.svg" alt="CSS3" />
+          <span>CSS3</span>
+        </div>
+        <div class="stack-item">
+          <img src="./assets/techs/javascript.svg" alt="JavaScript" />
+          <span>JavaScript</span>
+        </div>
+        <div class="stack-item">
+          <img src="./assets/techs/typescript.svg" alt="TypeScript" />
+          <span>TypeScript</span>
+        </div>
+        <div class="stack-item">
+          <img src="./assets/techs/react.svg" alt="React" />
+          <span>React</span>
+        </div>
+        <div class="stack-item">
+          <img src="./assets/techs/nodejs.svg" alt="Node.js" />
+          <span>Node.js</span>
+        </div>
+        <div class="stack-item">
+          <img src="./assets/techs/nestjs.svg" alt="NestJS" />
+          <span>NestJS</span>
+        </div>
+        <div class="stack-item">
+          <img src="./assets/techs/postgresql.svg" alt="PostgreSQL" />
+          <span>PostgreSQL</span>
+        </div>
+        <div class="stack-item">
+          <img src="./assets/techs/mysql.svg" alt="MySQL" />
+          <span>MySQL</span>
+        </div>
+        <div class="stack-item">
+          <img src="./assets/techs/git.svg" alt="Git" />
+          <span>Git</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projects">
+      <h2 class="section-title">Meus Projetos</h2>
+      <p class="section-description">
+        Alguns dos trabalhos que desenvolvi recentemente
+      </p>
+
+      <div class="projects-grid">
+        <!-- Wiki Books -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./assets/projects/wikibooks.png" alt="Wiki Books" />
+            <span class="status-badge status-completed">Completo</span>
+          </div>
+          <div class="project-content">
+            <h4>📚 Wiki Books</h4>
+            <p>
+              Plataforma de busca e catalogação de livros utilizando API
+              externa. Sistema de favoritos e listagem dinâmica com filtros
+              avançados.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">API</span>
             </div>
-            <div class="tech-item">
-              <img src="./assets/techs/css.svg" alt="CSS3" />
-              <span>CSS3</span>
-            </div>
-            <div class="tech-item">
-              <img src="./assets/techs/javascript.svg" alt="JavaScript" />
-              <span>JavaScript</span>
-            </div>
-            <div class="tech-item">
-              <img src="./assets/techs/typescript.svg" alt="TypeScript" />
-              <span>TypeScript</span>
-            </div>
-            <div class="tech-item">
-              <img src="./assets/techs/react.svg" alt="React" />
-              <span>React</span>
-            </div>
-            <div class="tech-item">
-              <img src="./assets/techs/nodejs.svg" alt="Node.js" />
-              <span>Node.js</span>
-            </div>
-            <div class="tech-item">
-              <img src="./assets/techs/postgresql.svg" alt="PostgreSQL" />
-              <span>PostgreSQL</span>
-            </div>
-            <div class="tech-item">
-              <img src="./assets/techs/git.svg" alt="Git" />
-              <span>Git</span>
-            </div>
-            <div class="tech-item">
-              <img src="./assets/techs/nestjs.svg" alt="Nest" />
-              <span>NestJs</span>
-            </div>
-            <div class="tech-item">
-              <img src="./assets/techs/mysql.svg" alt="MySQL" />
-              <span>MySQL</span>
+            <div class="project-links">
+              <a
+                href="https://projeto-wiki-books-kld7.vercel.app/"
+                target="_blank"
+                class="project-link"
+              >
+                Ver Projeto →
+              </a>
+              <a
+                href="https://github.com/Phcode007/projeto-wiki-books"
+                target="_blank"
+                class="project-link"
+              >
+                Código →
+              </a>
             </div>
           </div>
+        </div>
 
-          <h3>💼 Meus Projetos</h3>
-
-          <div class="projects-container">
-            <!-- Projeto 1: Wiki Books -->
-            <div class="project-card">
-              <div class="project-image">
-                <img
-                  src="./assets/projects/wikibooks.png"
-                  alt="Wiki Books Project"
-                />
-                <div class="project-overlay">
-                  <span class="status-badge completed">Completo</span>
-                </div>
-              </div>
-              <div class="project-content">
-                <h4>📚 Wiki Books</h4>
-                <p>
-                  Plataforma de busca e catalogação de livros utilizando API
-                  externa. Sistema de favoritos e listagem dinâmica com filtros
-                  avançados.
-                </p>
-                <div class="project-tags">
-                  <span>React</span>
-                  <span>TypeScript</span>
-                  <span>API</span>
-                </div>
-                <div class="project-links">
-                  
-                    href="https://projeto-wiki-books-kld7.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    Ver Projeto
-                  </a>
-                  
-                    href="https://github.com/Phcode007/projeto-wiki-books"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src="./assets/github.svg" alt="GitHub" />
-                    Código
-                  </a>
-                </div>
-              </div>
+        <!-- Garoinha -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./assets/projects/garoinha.png" alt="Garoinha" />
+            <span class="status-badge status-completed">Completo</span>
+          </div>
+          <div class="project-content">
+            <h4>🌧 Garoinha</h4>
+            <p>
+              Landing page moderna e responsiva para clima. Design clean com
+              foco em conversão e experiência do usuário.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
             </div>
-
-            <!-- Projeto 2: Garoinha -->
-            <div class="project-card">
-              <div class="project-image">
-                <img
-                  src="./assets/projects/garoinha.png"
-                  alt="Garoinha Project"
-                />
-                <div class="project-overlay">
-                  <span class="status-badge completed">Completo</span>
-                </div>
-              </div>
-              <div class="project-content">
-                <h4>🌧 Garoinha</h4>
-                <p>
-                  Landing page moderna e responsiva para clima. Design clean com
-                  foco em conversão e experiência do usuário.
-                </p>
-                <div class="project-tags">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JavaScript</span>
-                </div>
-                <div class="project-links">
-                  
-                    href="https://garoinha.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    Ver Projeto
-                  </a>
-                  
-                    href="https://github.com/Phcode007/garoinha"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src="./assets/github.svg" alt="GitHub" />
-                    Código
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Projeto 3: FitLink -->
-            <div class="project-card">
-              <div class="project-image">
-                <img
-                  src="./assets/projects/fitlink.png"
-                  alt="FitLink Project"
-                />
-                <div class="project-overlay">
-                  <span class="status-badge in-progress">Em Construção</span>
-                </div>
-              </div>
-              <div class="project-content">
-                <h4>💪 FitLink</h4>
-                <p>
-                  Aplicação de gestão fitness com tracking de treinos, evolução
-                  de cargas e dashboard analítico. Sistema completo de
-                  autenticação.
-                </p>
-                <div class="project-tags">
-                  <span>React</span>
-                  <span>Node.js</span>
-                  <span>PostgreSQL</span>
-                </div>
-                <div class="project-links">
-                  
-                    href="https://fit-link-eta.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    Preview
-                  </a>
-                  
-                    href="https://github.com/Phcode007/fitlink"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src="./assets/github.svg" alt="GitHub" />
-                    Código
-                  </a>
-                </div>
-              </div>
+            <div class="project-links">
+              <a
+                href="https://garoinha.vercel.app/"
+                target="_blank"
+                class="project-link"
+              >
+                Ver Projeto →
+              </a>
+              <a
+                href="https://github.com/Phcode007/garoinha"
+                target="_blank"
+                class="project-link"
+              >
+                Código →
+              </a>
             </div>
           </div>
-        </article>
-      </section>
-    </main>
+        </div>
 
+        <!-- FitLink -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./assets/projects/fitlink.png" alt="FitLink" />
+            <span class="status-badge status-progress">Em Construção</span>
+          </div>
+          <div class="project-content">
+            <h4>💪 FitLink</h4>
+            <p>
+              Aplicação de gestão fitness com tracking de treinos, evolução de
+              cargas e dashboard analítico. Sistema completo de autenticação.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://fit-link-eta.vercel.app/"
+                target="_blank"
+                class="project-link"
+              >
+                Preview →
+              </a>
+              <a
+                href="https://github.com/Phcode007/fitlink"
+                target="_blank"
+                class="project-link"
+              >
+                Código →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-      <section>
-        
+      <div class="social-links">
+        <a
           href="https://www.linkedin.com/in/paulo-henrique-belarmino-ads"
           target="_blank"
-          rel="noopener noreferrer"
         >
           <img src="./assets/linkedin.svg" alt="LinkedIn" />
         </a>
-        
-          href="https://github.com/Phcode007"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://github.com/Phcode007" target="_blank">
           <img src="./assets/github.svg" alt="GitHub" />
         </a>
-        
-          href="https://www.instagram.com/seu-usuario"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.instagram.com/seu-usuario" target="_blank">
           <img src="./assets/instagram.svg" alt="Instagram" />
         </a>
-      </section>
-      <h3>Feito com 💻 por Paulo Henrique Belarmino - 2025</h3>
+      </div>
+      <p>Feito com 💻 por Paulo Henrique Belarmino - 2025</p>
     </footer>
 
-    <script src="/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
