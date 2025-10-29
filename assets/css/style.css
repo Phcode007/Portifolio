@@ -1,5 +1,6 @@
 /* ==========================================
    ARQUIVO: assets/css/style.css
+   PORTFÓLIO - PAULO HENRIQUE BELARMINO
    ========================================== */
 
 /* ========== RESET E VARIÁVEIS ========== */
@@ -127,6 +128,7 @@ nav a:hover::after {
 
 .hero-content {
   max-width: 1200px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -293,6 +295,12 @@ section {
   padding: 2rem;
   border-radius: 15px;
   border-left: 4px solid var(--primary);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-text:hover {
+  transform: translateX(5px);
+  box-shadow: -5px 0 15px var(--shadow);
 }
 
 .about-text h3 {
@@ -305,6 +313,7 @@ section {
   color: var(--text-gray);
   margin-bottom: 1rem;
   text-align: left;
+  line-height: 1.8;
 }
 
 .highlight {
@@ -330,6 +339,7 @@ section {
   gap: 1rem;
   transition: all 0.3s;
   border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .stack-item:hover {
@@ -343,17 +353,23 @@ section {
   height: 60px;
   object-fit: contain;
   filter: grayscale(100%);
-  transition: filter 0.3s;
+  transition: filter 0.3s, transform 0.3s;
 }
 
 .stack-item:hover img {
   filter: grayscale(0%);
+  transform: scale(1.1);
 }
 
 .stack-item span {
   color: var(--text-light);
   font-weight: 600;
   font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.stack-item:hover span {
+  color: var(--primary);
 }
 
 /* ========== PROJETOS ========== */
@@ -400,17 +416,21 @@ section {
   height: 220px;
   overflow: hidden;
   background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.4s;
+  padding: 1rem;
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .status-badge {
@@ -423,6 +443,7 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 .status-completed {
@@ -449,6 +470,7 @@ section {
   color: var(--text-gray);
   margin-bottom: 1.5rem;
   line-height: 1.7;
+  text-align: left;
 }
 
 .project-tags {
@@ -465,6 +487,13 @@ section {
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
+  transition: all 0.3s;
+}
+
+.tag:hover {
+  background: var(--primary);
+  color: var(--bg-dark);
+  transform: translateY(-2px);
 }
 
 .project-links {
@@ -519,7 +548,7 @@ footer {
 .social-links a:hover {
   background: var(--primary);
   border-color: var(--primary);
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.1);
 }
 
 .social-links img {
@@ -553,12 +582,9 @@ footer p {
 /* ========== RESPONSIVO ========== */
 @media (max-width: 968px) {
   .hero-content {
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* ← Texto maior, foto menor */
-    gap: 4rem;
-    align-items: center;
-    animation: fadeInUp 1s ease;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
   }
 
   .hero-text h1 {
@@ -575,9 +601,14 @@ footer p {
     justify-content: center;
   }
 
+  .hero-image {
+    padding-right: 0;
+    justify-content: center;
+  }
+
   .profile-card {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 380px;
   }
 
   .section-title {
@@ -596,6 +627,7 @@ footer p {
 @media (max-width: 640px) {
   header {
     padding: 1rem 4%;
+    flex-direction: row;
   }
 
   nav ul {
@@ -603,24 +635,32 @@ footer p {
   }
 
   nav a {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .hero {
     padding: 6rem 4% 3rem;
   }
 
+  .hero-content {
+    gap: 2rem;
+  }
+
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .hero-text .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
   }
 
   .profile-card {
     width: 250px;
-    height: 250px;
+    height: 320px;
   }
 
   section {
@@ -629,6 +669,10 @@ footer p {
 
   .section-title {
     font-size: 1.75rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
   }
 
   .btn {
@@ -648,5 +692,62 @@ footer p {
   .stack-item img {
     width: 50px;
     height: 50px;
+  }
+
+  .stack-item span {
+    font-size: 0.85rem;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .project-content {
+    padding: 1.5rem;
+  }
+
+  .project-content h4 {
+    font-size: 1.3rem;
+  }
+
+  .project-content p {
+    font-size: 0.95rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+  }
+
+  .social-links a {
+    width: 45px;
+    height: 45px;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ========== MUITO PEQUENO ========== */
+@media (max-width: 380px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  nav a {
+    font-size: 0.75rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-card {
+    width: 220px;
+    height: 280px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }
