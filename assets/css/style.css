@@ -223,8 +223,9 @@ nav a:hover::after {
 
 .hero-image {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  padding-right: 5%;
 }
 
 .profile-card {
@@ -236,7 +237,6 @@ nav a:hover::after {
   border: 3px solid var(--primary);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s;
-  justify-items: center;
 }
 
 .profile-card:hover {
