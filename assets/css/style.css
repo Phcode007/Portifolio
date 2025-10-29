@@ -9,16 +9,15 @@
   box-sizing: border-box;
 }
 
-/*==========VARIÁVEIS-TROQUEAPENASESSAPARTE==========*/
 :root {
-  --primary: #3a59d1;
-  --primary-dark: #2d47a8;
-  --bg-dark: #0a0a0a; /* Preto - mantém */
-  --bg-card: #171717; /* Cinza escuro - mantém */
-  --text-light: #f9f9f9; /* Branco - mantém */
+  --primary: #41a67e;
+  --primary-dark: #2d8b68;
+  --bg-dark: #0a0a0a;
+  --bg-card: #171717;
+  --text-light: #f9f9f9;
   --text-gray: #a0a0a0;
-  --accent: #3d90d7;
-  --shadow: rgba(58, 89, 209, 0.2);
+  --accent: #05339c;
+  --shadow: rgba(65, 166, 126, 0.2);
 }
 
 html {
