@@ -14,6 +14,19 @@
   --text-gray: #a0a0a0;
   --accent: #05339c;
   --shadow: rgba(65, 166, 126, 0.2);
+
+  /* Cores das tecnologias */
+  --color-html: #e34f26;
+  --color-css: #663399;
+  --color-javascript: #f7df1e;
+  --color-typescript: #3178c6;
+  --color-react: #61dafb;
+  --color-nodejs: #339933;
+  --color-nestjs: #e0234e;
+  --color-postgresql: #4169e1;
+  --color-mysql: #4479a1;
+  --color-git: #f05032;
+  --color-jest: #c21325;
 }
 
 html {
@@ -339,20 +352,17 @@ section {
 
 .stack-item:hover {
   transform: translateY(-10px);
-  border-color: var(--primary);
-  box-shadow: 0 10px 30px var(--shadow);
 }
 
 .stack-item img {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  filter: grayscale(100%);
-  transition: filter 0.3s, transform 0.3s;
+  filter: brightness(0.5);
+  transition: all 0.3s;
 }
 
 .stack-item:hover img {
-  filter: grayscale(0%);
   transform: scale(1.1);
 }
 
@@ -363,8 +373,148 @@ section {
   transition: color 0.3s;
 }
 
-.stack-item:hover span {
-  color: var(--primary);
+/* Cores específicas para cada tecnologia */
+.stack-html:hover {
+  border-color: var(--color-html);
+  box-shadow: 0 10px 30px rgba(227, 79, 38, 0.3);
+}
+
+.stack-html:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-html));
+}
+
+.stack-html:hover span {
+  color: var(--color-html);
+}
+
+.stack-css:hover {
+  border-color: var(--color-css);
+  box-shadow: 0 10px 30px rgba(102, 51, 153, 0.3);
+}
+
+.stack-css:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-css));
+}
+
+.stack-css:hover span {
+  color: var(--color-css);
+}
+
+.stack-javascript:hover {
+  border-color: var(--color-javascript);
+  box-shadow: 0 10px 30px rgba(247, 223, 30, 0.3);
+}
+
+.stack-javascript:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-javascript));
+}
+
+.stack-javascript:hover span {
+  color: var(--color-javascript);
+}
+
+.stack-typescript:hover {
+  border-color: var(--color-typescript);
+  box-shadow: 0 10px 30px rgba(49, 120, 198, 0.3);
+}
+
+.stack-typescript:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-typescript));
+}
+
+.stack-typescript:hover span {
+  color: var(--color-typescript);
+}
+
+.stack-react:hover {
+  border-color: var(--color-react);
+  box-shadow: 0 10px 30px rgba(97, 218, 251, 0.3);
+}
+
+.stack-react:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-react));
+}
+
+.stack-react:hover span {
+  color: var(--color-react);
+}
+
+.stack-nodejs:hover {
+  border-color: var(--color-nodejs);
+  box-shadow: 0 10px 30px rgba(51, 153, 51, 0.3);
+}
+
+.stack-nodejs:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-nodejs));
+}
+
+.stack-nodejs:hover span {
+  color: var(--color-nodejs);
+}
+
+.stack-nestjs:hover {
+  border-color: var(--color-nestjs);
+  box-shadow: 0 10px 30px rgba(224, 35, 78, 0.3);
+}
+
+.stack-nestjs:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-nestjs));
+}
+
+.stack-nestjs:hover span {
+  color: var(--color-nestjs);
+}
+
+.stack-postgresql:hover {
+  border-color: var(--color-postgresql);
+  box-shadow: 0 10px 30px rgba(65, 105, 225, 0.3);
+}
+
+.stack-postgresql:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-postgresql));
+}
+
+.stack-postgresql:hover span {
+  color: var(--color-postgresql);
+}
+
+.stack-mysql:hover {
+  border-color: var(--color-mysql);
+  box-shadow: 0 10px 30px rgba(68, 121, 161, 0.3);
+}
+
+.stack-mysql:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-mysql));
+}
+
+.stack-mysql:hover span {
+  color: var(--color-mysql);
+}
+
+.stack-git:hover {
+  border-color: var(--color-git);
+  box-shadow: 0 10px 30px rgba(240, 80, 50, 0.3);
+}
+
+.stack-git:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-git));
+}
+
+.stack-git:hover span {
+  color: var(--color-git);
+}
+
+.stack-jest:hover {
+  border-color: var(--color-jest);
+  box-shadow: 0 10px 30px rgba(194, 19, 37, 0.3);
+}
+
+.stack-jest:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-jest));
+}
+
+.stack-jest:hover span {
+  color: var(--color-jest);
 }
 
 /* ========== PROJETOS ========== */
