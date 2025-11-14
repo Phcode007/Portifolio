@@ -27,6 +27,7 @@
   --color-mysql: #4479a1;
   --color-git: #f05032;
   --color-jest: #c21325;
+  --color-nextjs: #000000;
 }
 
 html {
@@ -515,6 +516,19 @@ section {
 
 .stack-jest:hover span {
   color: var(--color-jest);
+}
+
+.stack-nextjs:hover {
+  border-color: var(--color-nextjs);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stack-nextjs:hover img {
+  filter: brightness(1) drop-shadow(0 0 10px var(--color-nextjs));
+}
+
+.stack-nextjs:hover span {
+  color: var(--color-nextjs);
 }
 
 /* ========== PROJETOS ========== */
