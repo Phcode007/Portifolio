@@ -35,7 +35,7 @@ html {
 }
 
 body {
-  font-family: "Google Sans Code", "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   background: var(--bg-dark);
   color: var(--text-light);
   line-height: 1.6;
