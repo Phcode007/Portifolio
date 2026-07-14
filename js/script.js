@@ -111,3 +111,24 @@
       card.addEventListener('focusin', () => card.classList.add('hovered'));
       card.addEventListener('focusout', () => card.classList.remove('hovered'));
     });
+
+    // ── TIMELINE ANIMATION ──
+    const timeline = document.querySelector('.timeline');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    if (timeline && timelineItems.length) {
+      const tlObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            timeline.classList.add('in-view');
+            // reveal items with stagger
+            timelineItems.forEach((item, i) => {
+              setTimeout(() => item.classList.add('visible'), i * 160);
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      tlObserver.observe(timeline);
+    }
