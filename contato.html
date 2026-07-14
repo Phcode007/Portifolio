@@ -12,105 +12,101 @@
   </head>
 
   <body>
-    <!-- Cabeçalho da Página (header) -->
-    <header>
-      <!-- Título do cabeçalho -->
-      <h1>Meu Contato</h1>
-
-      <!-- Menu de Navegação -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
-      </nav>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">PH<span>.</span>dev</a>
+        <nav aria-label="Principal">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contato.html" aria-current="page">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <!-- Seção Principal da Página (main) -->
-    <main class="main_contato">
-      <!-- Seção Principal da Página (main) -->
-      <main class="main_contato">
-        <!-- Seção do Formulário -->
-        <!-- Seção do Formulário -->
-        <form action="#" method="post" id="formulario">
-          <label for="nome">Nome: </label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            placeholder="Digite seu nome"
-          />
-          <span id="errNome"></span>
+    <main>
+      <section class="contact-section container" aria-labelledby="contact-heading">
+        <h1 id="contact-heading">Vamos criar algo incrível?</h1>
 
-          <label for="email">Email: </label>
-          <input
-            id="email"
-            type="text"
-            name="email"
-            placeholder="Digite seu email"
-          />
-          <span id="errEmail"></span>
+        <div class="contact-grid">
+          <form action="#" method="post" id="formulario" class="contact-form" novalidate aria-describedby="form-status">
+            <p class="form-intro">Envie uma mensagem descrevendo seu projeto ou ideia. Respondo em até 48 horas.</p>
 
-          <label for="subject">Assunto: </label>
-          <input
-            id="subject"
-            type="text"
-            name="subject"
-            placeholder="Digite o assunto da mensagem"
-          />
-          <span id="errSubject"></span>
+            <label for="name">Nome</label>
+            <input id="name" type="text" name="name" placeholder="Seu nome" required aria-required="true" aria-describedby="errNome" />
+            <span id="errNome" class="form-error" aria-live="polite"></span>
 
-          <label for="message">Mensagem: </label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Digite sua mensagem"
-          ></textarea>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="seu@exemplo.com" required aria-required="true" aria-describedby="errEmail" />
+            <span id="errEmail" class="form-error" aria-live="polite"></span>
 
-          <button type="submit">Enviar</button>
-        </form>
+            <label for="subject">Assunto</label>
+            <input id="subject" type="text" name="subject" placeholder="Assunto" aria-describedby="errSubject" />
+            <span id="errSubject" class="form-error" aria-live="polite"></span>
 
-        <!-- Seção do Google Maps -->
-        <article>
-          <!-- Seção do Google Maps -->
-          <article>
-            <address>
-              <p>Rua Rad José Sivaldo dos Santos</p>
-              <p>Estância - SE</p>
-            </address>
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" placeholder="Escreva sua mensagem" rows="6" required aria-required="true" aria-describedby="errMessage"></textarea>
+            <span id="errMessage" class="form-error" aria-live="polite"></span>
 
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!4v1760527588467!6m8!1m7!1sDi2eiZaC1RIOpOdcR-3w9A!2m2!1d-11.24982970997435!2d-37.43239477939035!3f101.1123623317!4f-18.263359298661285!5f0.7820865974627469"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </article>
-        </article>
-      </main>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+              <button type="reset" class="btn btn-secondary">Limpar</button>
+            </div>
+
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+          </form>
+
+          <aside class="contact-info" aria-labelledby="contact-info-heading">
+            <h2 id="contact-info-heading">Contato</h2>
+            <p>Email: <a href="mailto:contato@ph.dev">contato@ph.dev</a></p>
+            <p>Localização: Estância - SE</p>
+
+            <div class="card map-card">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1760527588467!6m8!1m7!1sDi2eiZaC1RIOpOdcR-3w9A!2m2!1d-11.24982970997435!2d-37.43239477939035!3f101.1123623317!4f-18.263359298661285!5f0.7820865974627469"
+                width="100%"
+                height="220"
+                style="border:0; border-radius:12px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa de localização"
+              ></iframe>
+            </div>
+
+            <div class="social-contact">
+              <a href="https://github.com/Phcode007" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <img src="assets/github.svg" alt="GitHub">
+              </a>
+              <a href="https://www.linkedin.com/in/paulo-henrique-belarmino-ads" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <img src="assets/linkedin.svg" alt="LinkedIn">
+              </a>
+              <a href="https://www.instagram.com/paulo.herq/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <img src="assets/instagram.svg" alt="Instagram">
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
     </main>
 
-    <!-- Rodapé da Página (footer) -->
-    <footer>
-      <!-- Seção de Contato - Redes Sociais-->
-      <section>
-        <a href="https://www.linkedin.com/in/paulo-henrique-belarmino-ads">
-          <img src="assets/linkedin.svg" alt="LinkedIn" />
-        </a>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <a href="index.html" class="logo">PH<span>.</span>dev</a>
+          <p class="footer-copy">© <span id="year-footer"></span> Paulo Henrique Belarmino. Todos os direitos reservados.</p>
+        </div>
 
-        <a href="https://github.com/Phcode007">
-          <img src="assets/github.svg" alt="Github" />
-        </a>
-
-        <a href="">
-          <img src="assets/instagram.svg" alt="Instagram" />
-        </a>
-      </section>
-
-      <h3>Feito com 🧡 por Paulo Henrique Belarmino - 2025</h3>
+        <div class="footer-right">
+          <div class="footer-stack">Stack: HTML • CSS • JavaScript</div>
+          <div class="footer-social">
+            <a href="https://github.com/Phcode007" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img src="assets/github.svg" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/paulo-henrique-belarmino-ads" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
     </footer>
+
+    <script>document.getElementById('year-footer').textContent = new Date().getFullYear();</script>
   </body>
 </html>
