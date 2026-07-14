@@ -99,3 +99,15 @@
         heroButtons.classList.add('visible');
       }, delay + 1500);
     }, 500);
+
+    // ── PROJECT CARD HOVER / FOCUS FOR ACCESSIBILITY ──
+    const projectCards = document.querySelectorAll('.project-card');
+
+    projectCards.forEach(card => {
+      card.addEventListener('mouseenter', () => card.classList.add('hovered'));
+      card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
+
+      // show overlay when any focusable child receives focus
+      card.addEventListener('focusin', () => card.classList.add('hovered'));
+      card.addEventListener('focusout', () => card.classList.remove('hovered'));
+    });
