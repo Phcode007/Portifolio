@@ -53,9 +53,25 @@
     const menuToggle = document.getElementById('menuToggle');
     const nav = document.getElementById('nav');
     
+    // ensure aria-expanded is kept in sync for accessibility
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
       menuToggle.classList.toggle('active');
       nav.classList.toggle('active');
+    });
+
+    // close nav with Escape key for keyboard users
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (nav.classList.contains('active')) {
+          nav.classList.remove('active');
+          menuToggle.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.focus();
+        }
+      }
     });
     
     // Close menu when clicking a link

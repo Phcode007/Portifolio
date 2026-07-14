@@ -770,6 +770,24 @@ nav a:hover::after {
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
 }
 
+/* Skip link visible on focus */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: var(--bg-card);
+  color: var(--text-light);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transform: translateY(-120%);
+  transition: transform 180ms ease;
+  z-index: 2000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 /* ========== CONTACT PAGE & FOOTER ========== */
 .contact-section { padding: 4rem 5%; max-width: var(--max-width); margin: 0 auto; }
 .contact-grid {
