@@ -193,3 +193,35 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
       scrollTop.blur();
     });
+
+    // ── CONTACT FORM VALIDATION (lightweight, accessible)
+    const contactForm = document.getElementById('formulario');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const subject = document.getElementById('subject');
+        const message = document.getElementById('message');
+
+        let valid = true;
+
+        const setError = (el, msg) => { const span = document.getElementById('err' + el.id.charAt(0).toUpperCase() + el.id.slice(1)); span.textContent = msg; valid = false; };
+        const clearError = (el) => { const span = document.getElementById('err' + el.id.charAt(0).toUpperCase() + el.id.slice(1)); if (span) span.textContent = ''; };
+
+        // simple validations
+        if (!name.value.trim()) setError(name, 'Por favor informe seu nome'); else clearError(name);
+        if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) setError(email, 'Email inválido'); else clearError(email);
+        if (!message.value.trim() || message.value.trim().length < 6) setError(message, 'Mensagem muito curta'); else clearError(message);
+
+        const status = document.getElementById('form-status');
+        if (!valid) { status.textContent = 'Há erros no formulário. Corrija e tente novamente.'; status.style.color = '#ff6b6b'; status.focus(); return; }
+
+        // Simulate submit (no backend)
+        status.textContent = 'Enviando...'; status.style.color = 'var(--primary)';
+        setTimeout(() => {
+          status.textContent = 'Mensagem enviada com sucesso — obrigado!';
+          contactForm.reset();
+        }, 800);
+      });
+    }
