@@ -691,6 +691,85 @@ nav a:hover::after {
   .timeline-item { padding-left: 2.5rem; }
 }
 
+/* ========== MICROINTERACTIONS & ANIMAÇÕES ADICIONAIS ========== */
+
+/* Buttons: subtle glow and focus */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(65,166,126,0.06);
+  opacity: 0;
+  transition: opacity 260ms ease, transform 260ms ease;
+  pointer-events: none;
+}
+
+.btn:hover::after,
+.btn:focus::after {
+  opacity: 1;
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn:active { transform: translateY(1px); }
+
+/* Ripple effect for clickable buttons/links */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(255,255,255,0.12);
+  animation: ripple 650ms cubic-bezier(.2,.9,.27,1);
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* Hero subtle parallax layers */
+#hero { perspective: 1000px; }
+.glow { position: fixed; pointer-events: none; z-index: 800; width: 420px; height: 420px; margin-left: -210px; margin-top: -210px; border-radius: 50%; background: radial-gradient(circle at 40% 40%, rgba(65,166,126,0.18), rgba(65,166,126,0.06) 30%, transparent 60%); mix-blend-mode: screen; transition: transform 240ms linear; }
+
+.profile-card { transition: transform 300ms cubic-bezier(.2,.9,.27,1), box-shadow 300ms; will-change: transform; }
+
+/* Project link icon microinteraction */
+.project-link svg { transition: transform 220ms ease; }
+.project-link:hover svg { transform: translateX(4px) rotate(6deg); }
+
+/* Back to top button */
+.scroll-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 18px rgba(65,166,126,0.06);
+  color: var(--text-light);
+  opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity 220ms ease, transform 220ms ease;
+  z-index: 1200;
+}
+
+.scroll-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+/* Accessibility focus outlines */
+:focus { outline: 3px solid rgba(65,166,126,0.12); outline-offset: 4px; }
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
 .project-card {
   background: var(--bg-card);
   border-radius: 20px;

@@ -132,3 +132,64 @@
 
       tlObserver.observe(timeline);
     }
+
+    // ── HERO PARALLAX (mouse) & respects reduced motion ──
+    const hero = document.querySelector('#hero');
+    const glowEl = document.getElementById('glow');
+    const profileCard = document.querySelector('.profile-card');
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReduced && hero && glowEl) {
+      hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 -> 0.5
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        // Move glow slightly
+        glowEl.style.transform = `translate3d(${x * 40}px, ${y * 40}px, 0)`;
+
+        // Tilt profile card
+        if (profileCard) {
+          const rotateX = (y * 6).toFixed(2);
+          const rotateY = (x * -8).toFixed(2);
+          profileCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        }
+      });
+
+      hero.addEventListener('mouseleave', () => {
+        glowEl.style.transform = '';
+        if (profileCard) profileCard.style.transform = '';
+      });
+    }
+
+    // ── BUTTON RIPPLE EFFECT ──
+    document.querySelectorAll('.btn, .project-link, .social-link').forEach(el => {
+      el.addEventListener('click', function (e) {
+        const rect = this.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+        ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 700);
+      });
+    });
+
+    // ── BACK TO TOP BUTTON ──
+    const scrollTop = document.createElement('button');
+    scrollTop.className = 'scroll-top';
+    scrollTop.setAttribute('aria-label', 'Voltar ao topo');
+    scrollTop.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15l7-7 7 7"/></svg>';
+    document.body.appendChild(scrollTop);
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 420) scrollTop.classList.add('show'); else scrollTop.classList.remove('show');
+    }, { passive: true });
+
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollTop.blur();
+    });
