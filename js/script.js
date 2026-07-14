@@ -9,13 +9,29 @@
     // ── HEADER BLUR ON SCROLL ──
     const header = document.getElementById('header');
     
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 60) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
+        let lastScrollY = window.scrollY;
+        const delta = 10;
+
+        window.addEventListener('scroll', () => {
+          const currentY = window.scrollY;
+
+          if (currentY > 60) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+
+          // hide on scroll down, show on scroll up
+          if (Math.abs(currentY - lastScrollY) <= delta) return;
+
+          if (currentY > lastScrollY && currentY > 120) {
+            header.classList.add('hidden');
+          } else {
+            header.classList.remove('hidden');
+          }
+
+          lastScrollY = currentY;
+        }, { passive: true });
     
     // ── REVEAL ANIMATION ──
     const revealElements = document.querySelectorAll('.reveal');

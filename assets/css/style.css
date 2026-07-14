@@ -15,6 +15,18 @@
   --accent: #05339c;
   --shadow: rgba(65, 166, 126, 0.2);
 
+  /* Design tokens adicionais */
+  --glass-50: rgba(255,255,255,0.04);
+  --glass-80: rgba(255,255,255,0.06);
+  --radius-lg: 20px;
+  --radius-sm: 8px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --max-width: 1200px;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.6);
+  --muted: rgba(255,255,255,0.06);
+
   /* Cores das tecnologias */
   --color-html: #e34f26;
   --color-css: #663399;
@@ -35,7 +47,7 @@ html {
 }
 
 body {
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   background: var(--bg-dark);
   color: var(--text-light);
   line-height: 1.6;
@@ -43,25 +55,35 @@ body {
 }
 
 /* ========== HEADER FIXO ========== */
+/* Floating Navbar - glass + hide on scroll */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--primary);
-  padding: 1rem 5%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 6rem);
+  max-width: var(--max-width);
+  background: linear-gradient(180deg, var(--glass-80), transparent);
+  backdrop-filter: blur(10px) saturate(120%);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 0.6rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  transition: all 0.3s;
+  transition: transform 0.28s ease, opacity 0.28s ease, box-shadow 0.28s;
+  box-shadow: var(--shadow-soft);
 }
 
 header.scrolled {
-  padding: 0.75rem 5%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transform: translateX(-50%) translateY(-6px) scale(0.995);
+}
+
+header.hidden {
+  transform: translateX(-50%) translateY(-80px);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .logo {
@@ -93,12 +115,13 @@ nav a {
 nav a::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: -6px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: width 0.3s;
+  height: 3px;
+  background: linear-gradient(90deg,var(--primary), var(--primary-dark));
+  transition: width 0.28s cubic-bezier(.2,.9,.27,1);
+  border-radius: 2px;
 }
 
 nav a:hover {
@@ -110,7 +133,7 @@ nav a:hover::after {
 }
 
 /* ========== HERO SECTION ========== */
-.hero {
+.hero, #hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -136,20 +159,24 @@ nav a:hover::after {
 }
 
 .hero-content {
-  max-width: 1200px;
+  max-width: var(--max-width);
   width: 100%;
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   gap: 3rem;
   align-items: center;
-  animation: fadeInUp 1s ease;
+  animation: fadeInUp 840ms ease both;
 }
 
 .hero-text h1 {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  font-family: 'Syne', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 /* ========== EFEITO DE DIGITAÇÃO ========== */
@@ -194,7 +221,7 @@ nav a:hover::after {
   line-height: 1.8;
 }
 
-.cta-buttons {
+.hero-buttons, .cta-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -212,8 +239,9 @@ nav a:hover::after {
 }
 
 .btn-primary {
-  background: var(--primary);
+  background: linear-gradient(90deg,var(--primary),var(--primary-dark));
   color: var(--bg-dark);
+  box-shadow: 0 8px 30px rgba(65,166,126,0.12);
 }
 
 .btn-primary:hover {
@@ -250,24 +278,52 @@ nav a:hover::after {
   transition: transform 0.3s;
 }
 
-.profile-card:hover {
-  transform: translateY(-10px) rotate(2deg);
+.profile-card {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  transition: transform 0.36s ease, box-shadow 0.36s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
-
+.profile-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+}
 .profile-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  border-radius: calc(var(--radius-lg) - 2px);
 }
 
-/* ========== SEÇÕES ========== */
-section {
-  padding: 5rem 5%;
-  max-width: 1400px;
-  margin: 0 auto;
+/* Availability badge */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(90deg, rgba(65,166,126,0.12), rgba(65,166,126,0.06));
+  color: var(--text-light);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid rgba(65,166,126,0.08);
 }
-
-.section-title {
+.availability-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 12px rgba(65,166,126,0.6);
+}
   font-size: 2.5rem;
   color: var(--primary);
   margin-bottom: 1rem;
