@@ -52,41 +52,57 @@
     // ── HAMBURGER MENU ──
     const menuToggle = document.getElementById('menuToggle');
     const nav = document.getElementById('nav');
-    
-    // ensure aria-expanded is kept in sync for accessibility
+    const mobileMenuQuery = window.matchMedia('(max-width: 767px)');
+
+    const setNavAccessibility = (isOpen = false) => {
+      if (!nav) return;
+      if (mobileMenuQuery.matches) {
+        nav.setAttribute('aria-hidden', String(!isOpen));
+      } else {
+        nav.removeAttribute('aria-hidden');
+      }
+    };
+
     if (menuToggle) {
       menuToggle.setAttribute('aria-expanded', 'false');
+      setNavAccessibility(false);
+
       menuToggle.addEventListener('click', () => {
         const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
         const nextExpanded = !expanded;
-      menuToggle.setAttribute('aria-expanded', String(nextExpanded));
-      nav.setAttribute('aria-hidden', String(!nextExpanded));
-      menuToggle.classList.toggle('active');
-      nav.classList.toggle('active');
-    });
+        menuToggle.setAttribute('aria-expanded', String(nextExpanded));
+        setNavAccessibility(nextExpanded);
+        menuToggle.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
     }
+
+    mobileMenuQuery.addEventListener('change', () => setNavAccessibility(false));
 
     // close nav with Escape key for keyboard users
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        if (nav.classList.contains('active')) {
+        if (nav && nav.classList.contains('active')) {
           nav.classList.remove('active');
           menuToggle.classList.remove('active');
           menuToggle.setAttribute('aria-expanded', 'false');
+          setNavAccessibility(false);
           menuToggle.focus();
         }
       }
     });
     
     // Close menu when clicking a link
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        nav.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        nav.setAttribute('aria-hidden', 'true');
+    if (nav) {
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('active');
+          nav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          setNavAccessibility(false);
+        });
       });
-    });
+    }
     
     // ── COPYRIGHT YEAR ──
     document.getElementById('year').textContent = new Date().getFullYear();
