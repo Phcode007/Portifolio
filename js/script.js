@@ -54,13 +54,17 @@
     const nav = document.getElementById('nav');
     
     // ensure aria-expanded is kept in sync for accessibility
-    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', String(!expanded));
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        const nextExpanded = !expanded;
+      menuToggle.setAttribute('aria-expanded', String(nextExpanded));
+      nav.setAttribute('aria-hidden', String(!nextExpanded));
       menuToggle.classList.toggle('active');
       nav.classList.toggle('active');
     });
+    }
 
     // close nav with Escape key for keyboard users
     document.addEventListener('keydown', (e) => {
@@ -79,6 +83,8 @@
       link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
         nav.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
       });
     });
     
