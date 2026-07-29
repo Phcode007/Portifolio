@@ -16,6 +16,7 @@ import {
 export type Skill = {
   name: string
   Icon: IconType
+  color: string
 }
 
 export type SkillCategory = {
@@ -27,32 +28,32 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend",
     skills: [
-      { name: "HTML5", Icon: SiHtml5 },
-      { name: "CSS3", Icon: SiCss },
-      { name: "JavaScript", Icon: SiJavascript },
+      { name: "HTML5", Icon: SiHtml5, color: "#E34F26" },
+      { name: "CSS3", Icon: SiCss, color: "#1572B6" },
+      { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
     ],
   },
   {
     title: "Frameworks / Libraries",
     skills: [
-      { name: "React", Icon: SiReact },
-      { name: "TypeScript", Icon: SiTypescript },
-      { name: "Next.js", Icon: SiNextdotjs },
+      { name: "React", Icon: SiReact, color: "#61DAFB" },
+      { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+      { name: "Next.js", Icon: SiNextdotjs, color: "#FFFFFF" },
     ],
   },
   {
     title: "Backend / DB",
     skills: [
-      { name: "Node.js", Icon: SiNodedotjs },
-      { name: "NestJS", Icon: SiNestjs },
-      { name: "PostgreSQL", Icon: SiPostgresql },
+      { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
+      { name: "NestJS", Icon: SiNestjs, color: "#E0234E" },
+      { name: "PostgreSQL", Icon: SiPostgresql, color: "#4169E1" },
     ],
   },
   {
     title: "Ferramentas",
     skills: [
-      { name: "Git", Icon: SiGit },
-      { name: "Jest", Icon: SiJest },
+      { name: "Git", Icon: SiGit, color: "#F05032" },
+      { name: "Jest", Icon: SiJest, color: "#C21325" },
     ],
   },
 ]
