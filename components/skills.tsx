@@ -1,3 +1,4 @@
+import type React from "react"
 import { Reveal } from "@/components/reveal"
 import { SectionTitle } from "@/components/section-title"
 import { skillCategories } from "@/lib/data"
@@ -14,14 +15,15 @@ export function Skills() {
               <h3 className="mb-5 font-display text-lg font-bold text-primary">{category.title}</h3>
 
               <div className="grid grid-cols-3 gap-3">
-                {category.skills.map(({ name, Icon }) => (
+                {category.skills.map(({ name, Icon, color }) => (
                   <div
                     key={name}
-                    className="group flex flex-col items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-black/40"
+                    style={{ "--brand": color } as React.CSSProperties}
+                    className="group flex flex-col items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:[border-color:var(--brand)] hover:[box-shadow:0_0_24px_-4px_var(--brand)]"
                   >
                     <Icon
                       size={32}
-                      className="text-primary transition-transform group-hover:scale-110"
+                      className="text-muted-foreground transition-all duration-300 group-hover:scale-110 group-hover:[color:var(--brand)]"
                       aria-hidden
                     />
                     <span className="text-center text-sm font-semibold text-foreground">{name}</span>
