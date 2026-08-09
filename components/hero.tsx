@@ -20,7 +20,7 @@ export function Hero() {
             <span className="text-primary">Belarmino Santos</span>
           </h1>
 
-          <p className="mt-5 max-w-md text-lg text-muted text-pretty">
+          <p className="mt-5 max-w-md text-lg text-muted text-pretty typing-effect">
             Desenvolvedor Full Stack com foco em Front-end
           </p>
 

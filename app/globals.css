@@ -64,6 +64,34 @@ body::before {
   animation: reveal-up 0.7s cubic-bezier(0.2, 0.9, 0.27, 1) both;
 }
 
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-primary);
+  }
+}
+
+.typing-effect {
+  overflow: hidden;
+  border-right: 3px solid var(--color-primary);
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  display: inline-block;
+  max-width: fit-content;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
