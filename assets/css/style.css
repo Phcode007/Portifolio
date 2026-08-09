@@ -40,6 +40,10 @@
   --color-git: #f05032;
   --color-jest: #c21325;
   --color-nextjs: #000000;
+
+  --font-display: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-body: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 html {
@@ -47,7 +51,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   background: var(--bg-dark);
   color: var(--text-light);
   line-height: 1.6;
@@ -169,7 +173,7 @@ nav a:hover::after {
 }
 
 .hero-text h1 {
-  font-family: 'Syne', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   font-weight: 800;
   font-size: clamp(2rem, 4.5vw, 4rem);
   color: var(--text-light);
@@ -1261,9 +1265,9 @@ footer p {
       --text: #e8e8f0;
       --muted: #9ca3af;
       --accent: #7c6fff;
-      --font-display: 'Syne', sans-serif;
-      --font-mono: 'Fira Code', monospace;
-      --font-body: 'Inter', sans-serif;
+      --font-display: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      --font-body: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     }
     
     html {

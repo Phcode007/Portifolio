@@ -10,9 +10,9 @@
   --color-border: rgba(255, 255, 255, 0.06);
   --color-glass: rgba(255, 255, 255, 0.03);
 
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-display: var(--font-syne), system-ui, sans-serif;
-  --font-mono: var(--font-fira-code), monospace;
+  --font-sans: var(--font-fira-code), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-display: var(--font-fira-code), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: var(--font-fira-code), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --radius: 20px;
 }

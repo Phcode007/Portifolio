@@ -1,19 +1,6 @@
 import type { Metadata, Viewport } from "next"
-import { Inter, Syne, Fira_Code } from "next/font/google"
+import { Fira_Code } from "next/font/google"
 import "./globals.css"
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-syne",
-  display: "swap",
-})
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
@@ -46,10 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${inter.variable} ${syne.variable} ${firaCode.variable} bg-background`}
-    >
+    <html lang="pt-BR" className={`${firaCode.variable} bg-background`}>
       <body className="antialiased">{children}</body>
     </html>
   )
